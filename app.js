@@ -26,6 +26,7 @@ function actualizarListaAmigos() {
         lista.appendChild(li);
     }
 }
+
 function sortearAmigo() {
     if (amigos.length === 0) {
         alert("No hay amigos en la lista para sortear.");
@@ -36,5 +37,13 @@ function sortearAmigo() {
     let amigoSorteado = amigos[indiceAleatorio];
 
     let resultado = document.getElementById("resultado");
-    resultado.innerHTML = `<li>${amigoSorteado}</li>`;
+    resultado.innerHTML = `<li>Tu amigo secreto es: ${amigoSorteado}</li>`;
 }
+
+function reiniciarLista() {
+    amigos = [];
+    actualizarListaAmigos();
+    document.getElementById("resultado").innerHTML = "";
+    console.log("Lista de amigos reiniciada.");
+}
+
